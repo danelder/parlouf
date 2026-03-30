@@ -25,6 +25,7 @@ class RelayRaceTimer {
     
     initializeElements() {
         this.mainTimer = document.getElementById('main-timer');
+        this.currentRunnerDisplay = document.getElementById('current-runner');
         this.currentLegDisplay = document.getElementById('current-leg');
         this.totalRaceTimeDisplay = document.getElementById('total-race-time');
         this.nextLegBtn = document.getElementById('next-leg-btn');
@@ -329,6 +330,14 @@ class RelayRaceTimer {
     
     updateDisplay() {
         this.updateMainTimer();
+        
+        // Update current runner display
+        if (this.raceStarted && this.currentRunner < 5) {
+            this.currentRunnerDisplay.textContent = `Runner: ${this.runners[this.currentRunner].name}`;
+        } else {
+            this.currentRunnerDisplay.textContent = "Runner: -";
+        }
+        
         this.currentLegDisplay.textContent = `Runner: ${this.currentRunner + 1} | Leg: ${this.currentLeg + 1}`;
         
         // Update runner cards

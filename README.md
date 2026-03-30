@@ -1,6 +1,6 @@
-# Relay Race Timer
+# Paarlauf Relay Race Timer
 
-A web-based timing application for relay races with precise hundredths of a second timing and comprehensive race management features.
+A web-based timing application for Paarlauf relay races with precise hundredths of a second timing and comprehensive race management features.
 
 ## Features
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'parlouf-relay-timer-v1';
+const CACHE_NAME = 'Paarlauf-relay-timer-v1';
 const urlsToCache = [
     '/',
     '/styles.css',

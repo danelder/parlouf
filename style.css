@@ -156,4 +156,56 @@ button:active {
 
 .runner-timer {
     font-size: 1.5rem;
-    font-family: 'Courier New',
+    font-family: 'Courier New', monospace;
+    margin-bottom: 10px;
+}
+
+.runner-legs {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.leg {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    min-width: 50px;
+}
+
+.leg.active {
+    background: #4CAF50;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.leg.completed {
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0.7;
+}
+
+.leg.not-started {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    #main-timer {
+        font-size: 2rem;
+    }
+    
+    .runner-inputs {
+        grid-template-columns: 1fr;
+    }
+}

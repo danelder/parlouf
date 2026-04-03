@@ -58,6 +58,28 @@ class RelayRaceTimer {
         this.oopsBtn.addEventListener('click', () => this.oops());
         this.saveNamesBtn.addEventListener('click', () => this.saveRunnerNames());
         
+        // Add touch event listeners for better mobile experience
+        const touchButtons = [this.nextLegBtn, this.resetBtn, this.oopsBtn, this.saveNamesBtn];
+        touchButtons.forEach(button => {
+            button.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                button.style.transform = 'scale(0.95)';
+                button.style.opacity = '0.8';
+            });
+            
+            button.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                button.style.transform = 'scale(1)';
+                button.style.opacity = '1';
+            });
+            
+            button.addEventListener('touchcancel', (e) => {
+                e.preventDefault();
+                button.style.transform = 'scale(1)';
+                button.style.opacity = '1';
+            });
+        });
+        
         // Keyboard shortcuts (excluding spacebar)
         document.addEventListener('keydown', (e) => {
             if (e.code === 'Enter') {

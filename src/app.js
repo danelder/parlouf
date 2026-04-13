@@ -228,9 +228,15 @@ class RelayRaceTimer {
             this.nextLegBtn.disabled = false;
             this.nextLegBtn.textContent = "Next Leg";
             
-            // Stop any running timer
+            // Stop any running timer - make sure to clear it properly
             if (this.isRunning) {
                 this.stopRace();
+            }
+            
+            // Also clear the timer interval directly in case stopRace didn't clear it
+            if (this.timerInterval) {
+                clearInterval(this.timerInterval);
+                this.timerInterval = null;
             }
             
             // Reset all data
